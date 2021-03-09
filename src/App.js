@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import ToDoForm from './components/ToDoForm';
+import ToDoList from './components/ToDoList';
 
-function App () {
+function App (props) {
   const [todoArray, setTodoArray] = useState([
     {
       id: Date.now(),
@@ -25,6 +26,7 @@ function App () {
           setTodoArray([...todoArray, newTodo]);
         }}
       />
+      <ToDoList todoArray={todoArray} />
     </div>
   );
 }

@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headingBtnStyles}>
-        <div className={styles.btnStyles}>
+        <a className={styles.btnStyles} href='#'>
           <img src='/icons/format-list-bulleted.svg' alt='button' />
-        </div>
+        </a>
         <div>
           <h1>Website todo</h1>
         </div>
