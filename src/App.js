@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import ToDoForm from './components/ToDoForm';
 
-function App() {
+function App () {
+  const [todoArray, setTodoArray] = useState([
+    {
+      id: Date.now(),
+      body: '',
+      isDone: false,
+      createdAt: new Date(),
+    },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <ToDoForm
+        onSubmit={values => {
+          const newTodo = {
+            body: values.todoBody,
+            id: Date.now(),
+            isDone: false,
+          };
+          setTodoArray([...todoArray, newTodo]);
+        }}
+      />
     </div>
   );
 }
