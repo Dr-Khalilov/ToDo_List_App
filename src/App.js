@@ -14,7 +14,7 @@ function App (props) {
   ]);
 
   return (
-    <div>
+    <>
       <Header />
       <ToDoForm
         onSubmit={values => {
@@ -27,7 +27,7 @@ function App (props) {
         }}
       />
       <ToDoList todoArray={todoArray} />
-    </div>
+    </>
   );
 }
 

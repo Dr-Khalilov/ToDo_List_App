@@ -8,9 +8,7 @@ const Header = () => {
         <a className={styles.btnStyles} href='#'>
           <img src='/icons/format-list-bulleted.svg' alt='button' />
         </a>
-        <div>
-          <h1>Website todo</h1>
-        </div>
+        <h1>Website todo</h1>
       </div>
     </header>
   );
